@@ -1,0 +1,154 @@
+/* RESPONSIVE: Sự thích ứng trên các màn hình hiển thị khác nhau 
+   I. Media queries: là khái niệm cốt lõi để làm 1 website responsive: là các chuỗi truy vấn giúp khoanh từng vùng riêng biệt để viết CSS: 
+1 vùng riêng biệt để viết cho máy tính, 1 vùng riêng biệt để viết cho máy tính bảng, 1 vùng riêng biệt để viết cho điện thoại  
+*/
+
+/* Viết trong style.css cũng được */
+
+/* Media queries được viết ở CSS */
+/* Trong ngoặc tròn có 2 thuộc tính: được hiểu là thuộc tính để tạo ra điều kiện
+từ điều kiện này sẽ xác nhận được đâu là máy tính, đâu là máy tính bảng, đâu là mobile
+dựa vào kích thước chiều ngang của màn hình: min-width, max-width
+@media (max-width: 800px) {   Nếu độ rộng tối đa là 800px, nhỏ hơn hoặc bằng 800px thì đoạn CSS này sẽ chạy
+    CSS
+}
+
+@media (min-width: 800px) {   Nếu độ rộng nhỏ nhất là 800px, lớn hơn hoặc bằng 800px thì đoạn CSS này sẽ chạy 
+    CSS 
+} 
+
+
+BREAK POINT: điểm bẻ, điểm gãy: là điểm chuyển từ màn hình này sang màn hình khác
+    PC: >= 1024px
+    Tablet: >= 740px & < 1024px
+    Mobile: < 740px
+
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+*/
+
+/* Vì responsive Tablet không quá phức tạp nên đã viết luôn trên style.css */
+
+
+
+/* PC: khi nào muốn cái gì chỉ PC mới xuất hiện thì viết vào đây */
+
+/* ĐỔI GIÁ TRỊ PX SANG EM chỉ trong @media: convert px to rem: công cụ chuyển đổi px sang em: 
+( Trong @media query đơn vị em sẽ ko bị phụ thuộc vào bất cứ gì, sẽ luôn là mặc định 1em = 16px )
+        1024px = 64em
+        1023px = 63.9375em
+        740px = 46.25em
+        739px = 46.1875em
+    ĐỂ KHÔNG BỊ LỖI TRÊN NHIỀU TRÌNH DUYỆT KHÁC
+        */
+
+@media (min-width: 64em) {  
+
+}
+
+/* Tablet và Mobile */
+@media (max-width: 63.9375em) {
+    .btn {
+        padding: 15px 16px;
+    }
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    .contact-form .form-control {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .contact-info {
+        line-height: 2;
+    }
+
+    .contact-submit-btn {
+        font-size: 16px;
+    }
+
+    .socials-list {
+        font-size: 48px;
+    }
+
+    #footer .socials-list a {
+        margin: 0 8px;
+    }
+
+    #footer .copyright a {
+        padding: 12px 0;
+        display: inline-block;
+    }
+}
+
+
+/* Tablet khi nào muốn cái gì chỉ Tablet mới xuất hiện thì viết vào đây */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+   
+}
+
+/* Mobile khi nào muốn cái gì chỉ Mobile mới xuất hiện thì viết vào đây */
+@media (max-width: 46.1875em) {
+    .s-full-width, 
+    .s-col-full {
+        width: 100% !important;
+    }
+
+    .s-mt-8 {
+        margin-top: 8px !important;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+    
+    #header .mobile-menu-btn {
+        display: block;
+    }
+    
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial; 
+        /* initial: giá trị mặc định
+        để giá trị mặc định trên Mobile vì ở Mobile không cần position này */
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+        /* Trên Mobile nên để tối thiểu chiều cao là 42, tối đa là 48 khi kiểm tra elements */
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
+
+    .contact-form {
+        margin-top: 32px;
+    }
+
+}
